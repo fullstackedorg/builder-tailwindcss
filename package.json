@@ -1,4 +1,6 @@
 {
+    "name": "@fullstackedorg/builder-tailwindcss",
+    "version": "0.0.0",
     "dependencies": {
         "@esm.sh/oxide-wasm": "^0.1.4",
         "@types/node": "^25.3.0",
