@@ -10,7 +10,7 @@ fs.writeFileSync("index.html", `<h1 class="text-3xl font-bold underline bg-red-5
 
 await init({
   lightningcss: "node_modules/lightningcss-wasm/lightningcss_node.wasm",
-  oxide: "node_modules/@esm.sh/oxide-wasm/pkg/oxide_wasm_bg.wasm",
+  oxide: "node_modules/oxide-wasm/pkg/oxide_wasm_bg.wasm",
   tailwindcss: "node_modules/tailwindcss"
 });
 

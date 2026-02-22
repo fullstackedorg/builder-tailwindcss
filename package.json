@@ -2,9 +2,9 @@
     "name": "@fullstacked/builder-tailwindcss",
     "version": "0.0.0",
     "dependencies": {
-        "@esm.sh/oxide-wasm": "^0.1.4",
         "@types/node": "^25.3.0",
         "lightningcss-wasm": "^1.31.1",
+        "oxide-wasm": "^0.1.0",
         "tailwindcss": "^4.2.0"
     },
     "type": "module",

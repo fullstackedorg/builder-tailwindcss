@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import oxide, { extract } from "@esm.sh/oxide-wasm";
+import oxide, { extract } from "oxide-wasm";
 import { compile } from "tailwindcss";
 import lightningcss, { transform } from "lightningcss-wasm";
 
