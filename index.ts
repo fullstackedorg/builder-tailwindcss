@@ -78,16 +78,26 @@ async function loadStylesheet(id: string, base: string) {
 }
 
 export async function build(entryfile: string, outfile: string, files: string[], skipLightning: boolean = false) {
+    try {
+        await fs.promises.stat(entryfile);
+    } catch (e) { return; }
+
+    const entry = await fs.promises.readFile(entryfile, "utf-8");
     const contents = await Promise.all(files.map(file => fs.promises.readFile(file, "utf-8")));
     const candidate = contents.map(content => extract(content)).flat();
-    const entry = await fs.promises.readFile(entryfile, "utf-8");
     const compiler = await compile(entry, { loadStylesheet });
     const css = compiler.build(candidate);
+
+    if (css.trim() === "") {
+        return;
+    }
+
     const result = skipLightning
         ? css
         : transform({
             filename: "input.css",
             code: new TextEncoder().encode(css)
         }).code
+
     return fs.promises.writeFile(outfile, result);
 }
